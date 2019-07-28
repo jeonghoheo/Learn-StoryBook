@@ -5,8 +5,7 @@ import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
 import { Button, Welcome } from "@storybook/react/demo";
-import Input from "../Input";
-import { withBackgrounds } from "@storybook/addon-backgrounds";
+import Input from ".";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -25,6 +24,5 @@ storiesOf("Button", module)
   ));
 
 storiesOf("Input", module)
-  .addDecorator(story => <div style={{ margin: "50px" }}>{story()}</div>)
   .add("default", () => <Input onChange={action("changed")} />)
   .add("disabled", () => <Input disabled />);
